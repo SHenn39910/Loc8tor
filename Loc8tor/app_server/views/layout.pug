@@ -1,0 +1,31 @@
+doctype html
+html
+  head
+    meta(name='viewport', content= 'width=device-width, intitial-scale=1.0')
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/all.min.css')
+  body
+  nav.navbar.fixed-top.navbar-expand-md.navbar-light 
+    .container 
+      a.navbar-brand(href='/') Loc8tor
+      button.navbar-toggler(type= 'button', data-toggle='collapse',
+        data-target='#navbarMain')
+        span.navbar-toggler-icon 
+      #navbarMain.navbar-collapse.collapse
+      ul.navbar-nav.mr-auto 
+        li.nav-item
+          a.nav-link(href='/about/') About
+    .container
+      block content
+      
+      footer
+        .row
+          .col-12
+            small &copy; Loc8tor - Sonja E. Hennessy 2021
+      script(src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous")
+      script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" 
+      crossorigin="anonymous")
+      script(src='/javascripts/bootstrap.min.js')
