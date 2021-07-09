@@ -1,6 +1,6 @@
 /*GET 'home' page*/
 const homeList = (req, res) =>{
-    res.render('index', {title: 'Home'});
+    res.render('locations-list', {title: 'Home'});
 };
 
 
