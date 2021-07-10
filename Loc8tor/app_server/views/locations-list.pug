@@ -1,14 +1,69 @@
 extends layout
 
-.row.banner 
-    .col-12
-        h1 Loc8tor
-            small &nbsp;Find places to chill with wifi close by
-.row
-    .col-12.col-md-8
-        p Listings
-    .col-12.col-md-4
-        p.lead Loc8tor can help find places to work or play for you
 block content
-  h1= title
-  p Welcome to #{title}
+    .row.banner 
+        .col-12
+            h1 Loc8tor
+                small &nbsp;Find places to chill with wifi nearby
+    .row
+        .col-12.col-md-8
+            .card
+                .card-block
+                 h3
+                    a(href=" /location") Queencups
+                    small &nbsp;
+                        i.fas.fa-star
+                        i.fas.fa-star
+                        i.fas.fa-star
+                        i.fas.fa-star
+                        i.fas.fa-star
+                    span.badge.badge-pill.badge-default.float-right 100m
+                p.address 1 Main Street, Connecticut RG6 1PS
+                p.facilities
+                    span.badge.badge-warning Coffee
+                    span.badge.badge-warning Food
+                    span.badge.badge-warning Wifi
+    .row
+        .col-12.col-md-8
+            .card
+                .card-block
+                 h3
+                    a(href=" /location") Cafe BlackRock
+                    small &nbsp;
+                        i.fas.fa-star
+                        i.fas.fa-star
+                        i.fas.fa-star
+                        i.fas.fa-star
+                        i.fas.fa-star
+                    span.badge.badge-pill.badge-default.float-right 120m
+                p.address 38 Top Road, Connecticut RG6 1PS
+                p.facilities
+                    span.badge.badge-warning Coffee
+                    span.badge.badge-warning Foood
+                    span.badge.badge-warning Wifi
+    .row
+        .col-12.col-md-8
+            .card
+                .card-block 
+                h3
+                    a(href=" /location") Webster Arena
+                    small &nbsp;
+                        i.fas.fa-star
+                        i.fas.fa-star
+                        i.fas.fa-star
+                        i.fas.fa-star
+                        i.fas.fa-star
+                    span.badge.badge-pill.badge-default.float-right 20m
+                p.address 38 Top Road, Connecticut RG6 1PS
+                p.facilities
+                    span.badge.badge-warning Coffee
+                    span.badge.badge-warning Foood
+                    span.badge.badge-warning Drinks
+                    span.badge.badge-warning Wifi
+
+                    
+
+
+    .col-12.col-md-4
+        p.lead Loc8tor can help find places to work or play for you quick.
+        
