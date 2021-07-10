@@ -5,7 +5,7 @@ const homeList = (req, res) =>{
 
 
 /*GET 'location info' page */
-const locationInfo = (req, res)=>{
+const locationInfo = (req, res)=> {
     res.render('location-info', { title: 'Location Info'});
 };
 
