@@ -1,9 +1,9 @@
 extends layout
 include _includes/sharedHTMLfunctions
 mixin outputRating(rating)
--for (let i = 1; i <= rating; i++)
+ - for(let i = 1; i <= rating; i++)
  i.fas.fa-star 
- -for (let i = 1; i < 5; i++)
+ - for(let i = 1; i < 5; i++)
  i.fas.fa-star
 
 block content
@@ -38,10 +38,10 @@ block content
                     a(href=" /location")= location.name 
             +outputRating(location.rating)
                         i.fas.fa-star 
-                    span.badge.badge-pill.badge-default.float-right= location.distance
+            span.badge.badge-pill.badge-default.float-right= location.distance
                 p.address= location.address
                 .facilities
-                    span.badge.badge-warning= facility 
+                    span.badge.badge-warning= location.facilites  
     .row
         .col-12.col-md-8
             .card
