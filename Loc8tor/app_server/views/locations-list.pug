@@ -3,8 +3,8 @@ extends layout
 block content
     .row.banner 
         .col-12
-            h1 Loc8tor
-                small &nbsp;Find places to chill with wifi nearby
+            h1= pageHeader.title 
+                small &nbsp;#{pageHeader.strapline}
     .row
         .col-12.col-md-8
             .card
