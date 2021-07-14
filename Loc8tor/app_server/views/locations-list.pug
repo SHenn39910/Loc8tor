@@ -1,70 +1,26 @@
 extends layout
+
 include _includes/sharedHTMLfunctions
-mixin outputRating(rating)
- - for(let i = 1; i <= rating; i++)
- i.fas.fa-star 
- - for(let i = 1; i < 5; i++)
- i.fas.fa-star
 
 block content
-    .row.banner 
-        .col-12
-            h1= pageHeader.title 
-                small &nbsp;#{pageHeader.strapline}
-    .row
-        .col-12.col-md-8
-            .card
-                .card-block
-                 h3
-                    a(href=" /location-info") Queencups
-                    small &nbsp;
-                        i.fas.fa-star
-                        i.fas.fa-star
-                        i.fas.fa-star
-                        i.fas.fa-star
-                        i.fas.fa-star
-                    span.badge.badge-pill.badge-default.float-right 100m
-                p.address 1 Main Street, Connecticut RG6 1PS
-                p.facilities
-                    span.badge.badge-warning Coffee
-                    span.badge.badge-warning Food
-                    span.badge.badge-warning Wifi
-    .row
-        .col-12.col-md-8
-        each location in locations
-            .card
-                .card-block
-                 h3
-                    a(href=" /location")= location.name 
-            +outputRating(location.rating)
-                        i.fas.fa-star 
-            span.badge.badge-pill.badge-default.float-right= location.distance
-                p.address= location.address
-                .facilities
-                    span.badge.badge-warning= location.facilites  
-    .row
-        .col-12.col-md-8
-            .card
-                .card-block 
-                h3
-                    a(href=" /location") Webster Arena
-                    small &nbsp;
-                        i.fas.fa-star
-                        i.fas.fa-star
-                        i.fas.fa-star
-                        i.fas.fa-star
-                        i.fas.fa-star
-                    span.badge.badge-pill.badge-default.float-right 20m
-                p.address 38 Top Road, Connecticut RG6 1PS
-                p.facilities
-                    span.badge.badge-warning Coffee
-                    span.badge.badge-warning Foood
-                    span.badge.badge-warning Drinks
-                    span.badge.badge-warning Wifi
+  .row.banner
+    .col-12
+      h1= pageHeader.title
+        small &nbsp;#{pageHeader.strapLine}
 
-                    
+  .row
+    .col-12.col-md-8
+      each location in locations
+        .card
+          .card-block
+            h4
+              a(href='/location')= location.name
+              +outputRating(location.rating)
+              span.badge.badge-pill.badge-default.float-right= location.distance
+            p.address= location.address
+            p.facilities= location.facilities
+                span.badge.badge-warning= facilities
 
 
     .col-12.col-md-4
-        p.lead Loc8tor can help find places to work or play for you quick.
-        
+      p.lead= sidebar

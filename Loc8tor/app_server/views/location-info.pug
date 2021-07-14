@@ -1,45 +1,35 @@
 extends layout
-
+include _includes/sharedHTMLfunctions
 block content
     .row.banner
       .col-12
-      h1 Queencups
+      h1= peageHeader.title
     .row
-      .col-xs-12.col-md-9
+      .col-12.col-lg-9
         .row
           .col-12.col-md-6
             p.rating
-              i.fas.fa-star
-              i.fas.fa-star
-              i.fas.fa-star
-              i.fas.fa-star-empty
-              i.fas.fa-star-empty
+              +outputRating(location.rating)
             p 1 Main Street, Connecticut, RG6 1PS
             .card.card-primary
                .card-block
                  h2.card-title Opening Hours 
-                   .card-block
-                    p Monday-Friday : 7:00am - 7:00pm
-                    p Saturday : 8:00am - 5:00pm
-                    p Sunday : 8:00 am - 1:00pm
-            .card.card-primary 
-                .card-block 
-                    h2.card-title Facilities 
-                    span.badge.badge-warning 
+                 each time in location.openingTimes
+                    p.card-text
+                      | #{time.days} :
+                      if time.closed 
+                        | closed
+                      else 
+                        | #{time.opening} -  #{time.closing}
+            .card.card-primary
+              .card-blcok
+                h2.card-title Facilities 
+                  each facility in location.facilities
+                    span.badge.badge-warning
                       i.fa.fa-check 
-                      | &nbsp; Coffee
-                    | &nbsp; 
-                    span.badge.badge-warning 
-                      i.fa.fa-check 
-                      | &nbsp;Food 
-                    | &nbsp;
-                    span.badge.badge-warning 
-                      i.fa.fa-check 
-                      | &nbsp;Premium wifi
-                    | &nbsp;
-            .col-12.col-md-6.location-map 
-                .card.card-primary 
-                    .card-block 
+                      | &nbsp; #{facility}
+                    |&nbsp;
+            
                     h2.card-title Location Map
                     img.img-responsive.img-rounded(src='http://maps.googleapis.com/maps/api/staticmap?center=51.455041,-0.9690884&zoom=17&size=400x350&sensor=false&markers=51.455041,-0.9690884&scale=2&key=AIzaSyBkxcTIPpMxDwxXYjgHRC5ta8qlNK-8d1w') 
     .row
